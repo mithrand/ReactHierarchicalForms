@@ -3,7 +3,7 @@
  */
 
 import * as React from 'react';
-import {SelectButton, SelectOption} from './SelectButton';
+import {SelectInput, SelectOption} from './SelectInput';
 import {Course} from '../model/course';
 import {Elective} from '../model/elective';
 
@@ -62,7 +62,7 @@ export class CoursesSelect extends React.Component<{}, {}> {
 
         return (
             <form className="form-horizontal">
-                <SelectButton
+                <SelectInput
                     placeholder="Course"
                     label="Course"
                     name="Course"
@@ -70,7 +70,7 @@ export class CoursesSelect extends React.Component<{}, {}> {
                     onSelect={this.onSelect}
                     firstElement="Which Course?"
                 />
-                <SelectButton
+                <SelectInput
                     placeholder="Elective"
                     label="Elective"
                     name="Elective"

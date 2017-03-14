@@ -9,7 +9,7 @@ export interface SelectOption {
     value: any;
 }
 
-export interface SelectButtonProps {
+export interface SelectInputProps {
     placeholder: string;
     label: string;
     name: string;
@@ -18,11 +18,11 @@ export interface SelectButtonProps {
     onSelect?(value: number): void;
 }
 
-export class SelectButton extends React.Component<SelectButtonProps, {}> {
+export class SelectInput extends React.Component<SelectInputProps, {}> {
 
-    props: SelectButtonProps;
+    props: SelectInputProps;
 
-    constructor(props: SelectButtonProps) {
+    constructor(props: SelectInputProps) {
         super(props);
         this.props = props;
     }
@@ -50,4 +50,4 @@ export class SelectButton extends React.Component<SelectButtonProps, {}> {
     }
 }
 
-export default SelectButton;
+export default SelectInput;
