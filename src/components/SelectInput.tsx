@@ -4,7 +4,7 @@
 
 import * as React from 'react';
 
-export interface SelectOption {
+export class SelectOption {
     label: string;
     value: any;
 }

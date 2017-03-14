@@ -38,15 +38,33 @@ export class TextInput extends React.Component<TextInputProps , {}> {
     };
 
     render() {
-        let errorMessage = !this.state.isValid ? (<span className="error">{this.props.errorMessage}</span> ) : '';
+        let errorMessage: any = '';
+        let errorIcon: any = '';
+        let hasError: string = '';
+
+        if (!this.state.isValid) {
+            errorIcon = (
+                <span className="glyphicon glyphicon-remove  form-control-feedback"/>
+            );
+            errorMessage = (
+                <span className="sr-only">{this.props.errorMessage}</span>
+            );
+            hasError = 'has-error';
+        }
         return(
-            <div className="controlGroup">
-                <input
-                    placeholder={this.props.placeholder}
-                    type="text"
-                    name={this.props.name}
-                    onChange={this.onChangeHandler}
-                />
+            <div className={['form-group has-feedback', hasError].join(' ')}>
+                <label className="control-label" htmlFor="inputGroupSuccess1">{this.props.placeholder}</label>
+                <div className="input-group">
+                    <span className="input-group-addon">@</span>
+                    <input
+                        name={this.props.name}
+                        type="text"
+                        className="form-control"
+                        placeholder={this.props.placeholder}
+                        onChange={this.onChangeHandler}
+                    />
+                </div>
+                {errorIcon}
                 {errorMessage}
             </div>
         );
